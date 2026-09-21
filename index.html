@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chaptca Checker adalah halaman demo untuk pengecekan email dan autentikasi yang bisa di-publish ke GitHub Pages."
+    />
+    <title>Chaptca Checker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">C</span>
+          <span>Chaptca Checker</span>
+        </div>
+        <nav class="nav">
+          <a href="#features">Fitur</a>
+          <a href="#checker">Checker</a>
+          <a href="#login">Masuk</a>
+        </nav>
+      </header>
+
+      <main class="hero">
+        <section class="intro">
+          <p class="eyebrow">B R A N D • READY</p>
+          <h1>Smart email validation untuk brand digital yang modern.</h1>
+          <p class="subtitle">
+            Chaptca Checker membantu Anda mengecek email dengan tampilan yang lebih profesional,
+            cepat, dan siap dipublikasikan tanpa ngrok atau server lokal.
+          </p>
+          <div class="cta-row">
+            <a href="#checker" class="primary-btn">Coba Checker</a>
+            <a href="#login" class="secondary-btn">Login Demo</a>
+          </div>
+        </section>
+
+        <aside class="login-card" id="login">
+          <div class="tab-switch" aria-label="Tab login">
+            <button class="tab active" data-tab="login-form" type="button">Login</button>
+            <button class="tab" data-tab="register-form" type="button">Register</button>
+          </div>
+
+          <div class="form-panel active" id="login-form">
+            <h2>Autentikasi</h2>
+            <form id="loginForm">
+              <label>
+                <span>Username</span>
+                <input type="text" id="loginUsername" name="username" required />
+              </label>
+              <label>
+                <span>Password</span>
+                <input type="password" id="loginPassword" name="password" required />
+              </label>
+              <button type="submit">Masuk</button>
+            </form>
+          </div>
+
+          <div class="form-panel" id="register-form">
+            <h2>Buat Akun</h2>
+            <form id="registerForm">
+              <label>
+                <span>Username</span>
+                <input type="text" id="registerUsername" name="username" required />
+              </label>
+              <label>
+                <span>Password</span>
+                <input type="password" id="registerPassword" name="password" required />
+              </label>
+              <button type="submit">Daftar</button>
+            </form>
+          </div>
+
+          <p id="authMessage" class="auth-message" aria-live="polite"></p>
+        </aside>
+      </main>
+
+      <section class="features" id="features">
+        <article>
+          <h3>Frontend modern</h3>
+          <p>Desain antarmuka dibuat dengan gaya premium agar tampil lebih profesional di mata audiens.</p>
+        </article>
+        <article>
+          <h3>Validasi cepat</h3>
+          <p>Input email dan cek format, domain, serta status keamanan dalam satu alur yang simpel.</p>
+        </article>
+        <article>
+          <h3>Deploy tanpa ribet</h3>
+          <p>Setelah push ke GitHub, tinggal publish dari Settings → Pages dan hasilnya langsung live.</p>
+        </article>
+      </section>
+
+      <section class="checker-panel" id="checker">
+        <div class="checker-header">
+          <div>
+            <p class="eyebrow">Pemeriksaan</p>
+            <h2>Check Email</h2>
+          </div>
+        </div>
+
+        <form id="checkerForm" class="checker-form">
+          <label>
+            <span>Email</span>
+            <input type="email" id="emailInput" placeholder="contoh: nama@email.com" required />
+          </label>
+          <button type="submit">Cek Email</button>
+        </form>
+
+        <div id="checkerResult" class="checker-result" aria-live="polite">
+          Hasil pemeriksaan akan muncul di sini.
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

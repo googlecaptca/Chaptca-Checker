@@ -1,0 +1,354 @@
+:root {
+  --bg-1: #07111f;
+  --bg-2: #0f172a;
+  --bg-3: #111827;
+  --panel: rgba(15, 23, 42, 0.78);
+  --panel-border: rgba(125, 211, 252, 0.28);
+  --brand: #7dd3fc;
+  --brand-strong: #38bdf8;
+  --brand-warm: #fbbf24;
+  --text: #e2f3ff;
+  --muted: #b8c8d9;
+  --danger: #f87171;
+  --success: #4ade80;
+  --shadow: rgba(2, 6, 23, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 30%),
+    linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 55%, var(--bg-3) 100%);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 60px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 0 28px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Cinzel", serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-warm) 100%);
+  color: #07111f;
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+}
+
+.nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: center;
+  min-height: 520px;
+}
+
+.intro {
+  padding: 30px 0;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.intro h1 {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  line-height: 1.1;
+  max-width: 620px;
+}
+
+.subtitle {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-top: 18px;
+}
+
+.cta-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.primary-btn,
+.secondary-btn,
+button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn,
+button[type="submit"] {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-warm) 100%);
+  color: #07111f;
+  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.18);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+button[type="submit"]:hover {
+  transform: translateY(-1px);
+}
+
+.login-card,
+.checker-panel {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.75) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 22px;
+  box-shadow: 0 25px 50px -12px var(--shadow);
+}
+
+.login-card {
+  padding: 28px 22px 20px;
+}
+
+.tab-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 18px;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tab.active {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--brand);
+}
+
+.form-panel {
+  display: none;
+}
+
+.form-panel.active {
+  display: block;
+}
+
+.login-card h2,
+.checker-header h2 {
+  margin: 0 0 18px;
+  font-family: "Cinzel", serif;
+  font-size: 1.5rem;
+}
+
+label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+label span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+input {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text);
+  padding: 14px 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: rgba(125, 211, 252, 0.85);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.14);
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.auth-message,
+.checker-result {
+  min-height: 24px;
+  margin-top: 18px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.auth-message.error {
+  color: var(--danger);
+}
+
+.auth-message.success {
+  color: var(--success);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 42px;
+}
+
+.features article {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px;
+}
+
+.features h3 {
+  margin-top: 0;
+  color: var(--brand);
+}
+
+.features p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.checker-panel {
+  margin-top: 42px;
+  padding: 26px;
+}
+
+.checker-header {
+  margin-bottom: 10px;
+}
+
+.checker-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 14px;
+}
+
+.checker-result {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 18px;
+  color: var(--muted);
+}
+
+.checker-result.ok {
+  color: var(--success);
+  border-color: rgba(74, 222, 128, 0.4);
+}
+
+.checker-result.warn {
+  color: #ffd166;
+  border-color: rgba(255, 209, 102, 0.4);
+}
+
+.checker-result.error {
+  color: var(--danger);
+  border-color: rgba(248, 113, 113, 0.45);
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .checker-form,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+}
