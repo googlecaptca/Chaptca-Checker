@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: chaptca-checker
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    healthCheckPath: /google724c2c35ebc454fc.html
+    envVars:
+      - key: PORT
+        value: 8000
